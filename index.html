@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E3 IT Services – Portal Update</title>
+
+    <style>
+        /* Background animation */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #0a2a43, #0f4563, #0a2a43);
+            background-size: 400% 400%;
+            animation: gradientMove 18s ease infinite;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Particle styling */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .particles span {
+            position: absolute;
+            display: block;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            animation: floatUp linear infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) scale(1); opacity: 0.6; }
+            100% { transform: translateY(-120vh) scale(0.4); opacity: 0; }
+        }
+
+        /* Center container */
+        .container {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            padding: 40px;
+            max-width: 680px;
+            margin: auto;
+            margin-top: 12vh;
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            box-shadow: 0 6px 30px rgba(0,0,0,0.35);
+            animation: fadeIn 1.6s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        img.logo {
+            width: 160px;
+            margin-bottom: 25px;
+            filter: drop-shadow(0 0 8px rgba(0,0,0,0.4));
+        }
+
+        h1 {
+            margin-top: 0;
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        a.button {
+            display: inline-block;
+            padding: 14px 32px;
+            background: #00a2ff;
+            color: white;
+            border-radius: 8px;
+            font-size: 18px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.25s;
+            box-shadow: 0 4px 14px rgba(0,162,255,0.5);
+        }
+
+        a.button:hover {
+            background: #007acc;
+            box-shadow: 0 6px 20px rgba(0,162,255,0.7);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            margin-top: 18px;
+            font-size: 14px;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Particle layers -->
+    <div class="particles">
+        <!-- Generates ~35 floating particles -->
+        <script>
+            for (let i = 0; i < 35; i++) {
+                const p = document.createElement("span");
+                const size = Math.random() * 4 + 2;
+                p.style.width = size + "px";
+                p.style.height = size + "px";
+                p.style.left = Math.random() * 100 + "vw";
+                p.style.bottom = "-" + (Math.random() * 20 + 10) + "vh";
+                p.style.animationDuration = (Math.random() * 8 + 6) + "s";
+                p.style.animationDelay = Math.random() * 5 + "s";
+                document.querySelector(".particles").appendChild(p);
+            }
+        </script>
+    </div>
+
+    <!-- Main content card -->
+    <div class="container">
+        <img src="e3-logo.png" class="logo" alt="E3 IT Services Logo">
+
+        <h1>We’re Upgrading Your Portal</h1>
+
+        <p>
+            Our customer portal is currently undergoing a major upgrade as we transition 
+            to a new platform powered by <strong>Microsoft Dynamics</strong>.  
+            This will deliver a faster, more secure, and more integrated experience.
+        </p>
+
+        <p>
+            The new portal will be available soon — thank you for your patience.
+        </p>
+
+        <a href="https://e3itservices.com" class="button">Visit Our Website</a>
+
+        <footer>© 2025 E3 IT Services. All rights reserved.</footer>
+    </div>
+
+</body>
+</html>
